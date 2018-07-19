@@ -1,0 +1,34 @@
+ion-content style="background-color: black;">
+ <h1 align=center>
+   <ion-title id="title">
+      Name
+   </ion-title> 
+  </h1>
+
+  <div class="clientInput" align="center">
+    <input id='zipInput' class="clientInputField" type="text" placeholder="Zip">
+  </div>
+
+  <div class="clientInput" align="center">
+    <input  class="clientInputField" type="text" placeholder="Add">
+  </div>
+
+  <div class="clientInput" align="center">
+    <input  class="clientInputField" type="text" placeholder="Phone Number">
+  </div>
+
+  <div class="clientInput" align="center">
+    <input  class="clientInputField" type="text" placeholder="Number of Hours">
+  </div>
+
+  <div class="clientInput" align="center">
+   <input  class="clientInputField" type="text" placeholder="Budget">
+  </div>
+  
+  <div align="center"> 
+      <button ion-button [navPush]="pushPage" style="border-radius:20px; background-color:yellow; color:black; "> Submit</button>
+    </div> 
+
+</ion-content>
+
+  

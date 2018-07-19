@@ -1,0 +1,35 @@
+page-about{
+    #map{
+        height:100%;
+    }
+   
+    #mapContainer{
+        height: 100%;
+        font-size: 18px;
+    }
+    
+   .clientButton{
+      width: 143px;
+      height: 32px;
+      border-radius: 20px;
+   }
+
+   #noBut{
+        margin-left: 23px;
+         float: left;
+        margin-top: 40px;
+        font-size: 17px;    
+    }
+
+    #yesBut{
+        margin-right: 23px; 
+        float: right;
+        margin-top: 40px;
+        font-size: 17px;
+       
+    }
+
+    .btn{
+        color: blue
+    }
+}
