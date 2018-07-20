@@ -67,22 +67,22 @@ export class AboutPage {
       let MARKERS = [
         {
           pos: new google.maps.LatLng(33.900120 , -118.214594),
-          infoWindow: '<h1>Banda recodo</h1> <button class="btn" id="banda1"> Show availability </button>',
+          infoWindow: '<h1>Los Juniors de la Sierra</h1> <h5>(760)892-4904</h5><button class="btn" id="banda1"> Show availability </button>',
           id: 'banda1'
         },
         {
           pos: new google.maps.LatLng(33.902464 , -118.218272),
-          infoWindow: '<h1>Banda recodo</h1> <button class="btn" id="banda2"> Show availability </button>',
+          infoWindow: '<h1>Amistades de Sinaloa</h1> <h5>(562)415-6112</h5> <button class="btn" id="banda2"> Show availability </button>',
           id: 'banda2'
         },
         {
           pos: new google.maps.LatLng(33.953867 , -118.252328 ),
-          infoWindow: '<h1>Banda recodo</h1> <button class="btn" id="banda3"> Show availability </button>',
+          infoWindow: '<h1>La Nueva Frequencia</h1> <h5>(323)841-4826</h5> <button class="btn" id="banda3"> Show availability </button>',
           id: 'banda3'
         },
         {
           pos: new google.maps.LatLng(33.938429, -118.278330 ),
-          infoWindow: '<h1>Banda recodo</h1> <button class="btn" id="banda4"> Show availability </button>',
+          infoWindow: '<h1>Serafin y Su Nueva Orden</h1> <h5>(323)388-6267</h5> <button class="btn" id="banda4"> Show availability </button>',
           id: 'banda4'
         }
       ]
