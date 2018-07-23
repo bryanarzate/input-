@@ -13,9 +13,11 @@ import { BandLocationPage } from '../pages/band-location/band-location';
 import { ClientRegisterPage } from '../pages/client-register/client-register';
 import { BandAvailabilityPage } from '../pages/band-availability/band-availability';
 
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Geolocation } from '@ionic-native/geolocation';
+
 
 
 @NgModule({
@@ -49,7 +51,6 @@ import { Geolocation } from '@ionic-native/geolocation';
     BandLocationPage,
     ClientRegisterPage,
     BandAvailabilityPage,
-
   ],
   providers: [
     StatusBar,

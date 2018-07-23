@@ -16,7 +16,6 @@ var markers = [0, 1, 2, 3, 4,]
 
 })
 
-
 export class AboutPage {
   public map;
   @ViewChild('map') mapRef: ElementRef;
