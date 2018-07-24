@@ -18,9 +18,7 @@ export class ClientRegisterPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-  nextButt(){
-    this.navCtrl.push(AboutPage);
-  }
+  
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ClientRegisterPage');

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ClientRegisterPage } from '../client-register/client-register';
-import { HomePage } from '../home/home';
+import { AboutPage } from '../about/about';
 
 /**
  * Generated class for the MainPage page.
@@ -21,13 +20,10 @@ export class MainPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-customerBut(){
-    this.navCtrl.push(ClientRegisterPage);
+loginBut(){
+    this.navCtrl.push(AboutPage);
   }
 
-  bandBut(){
-    this.navCtrl.push(HomePage);
-  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MainPage');

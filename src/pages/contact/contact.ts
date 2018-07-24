@@ -165,8 +165,5 @@ export class ContactPage {
       }
     });
   }
-  callBut(){
-      this.navCtrl.push(PricePage);
-    
-  }
+ 
 }

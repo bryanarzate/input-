@@ -6,30 +6,25 @@
 -->
 <ion-header >
 
-  <ion-navbar style="color: red">
-    <ion-title>Register</ion-title>
+  <ion-navbar >
+    <ion-title style="color: white;">Register</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <form align="center">
-        Name:<br>
-        <input type="text" name="firstname"><br>
-      </form>
-     
-      <form align="center">
-          Email:<br>
-          <input type="text" name="firstname"><br>
-        </form>
-       
-        <form align="center">
-            Phone Nummber:<br>
-            <input type="text" name="firstname"><br>
-          </form>
-      <div id="nextButt" align="center">
-          <button ion-button (click) ="nextButt()" style="border-radius:20px; color:white; background-color:red; margin-top: 20px;"> Next</button>
+<div align="center" >
+      <input id="nameBut" class="clientRegister" type="text" align="center" name="name" placeholder="Name">
+</div>
+<div align="center">
+      <input class="clientRegister" type="text" align="center" name="name" placeholder="E-mail">
+</div>
+<div align="center" >
+      <input class="clientRegister" type="text" align="center" name="name" placeholder="Phone #">
+</div>
+      <div  align="center">
+          <button id="nextButt" ion-button (click) ="nextButt()" style="border-radius:100px; color:white; background-color:#D92020; ">Sign Up</button>
       </div>
     
 </ion-content>
