@@ -97,16 +97,12 @@ export class AboutPage {
 
         marker.addListener('click', () =>{
           infoWindow.open(map, marker);
-
+          console.log(data.id);
           document.getElementById(data.id).addEventListener('click', () => {
             this.navCtrl.push(ContactPage, {id: data.id});
           })
         })
-
       })
-
-
-
     });
 
 
