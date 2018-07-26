@@ -1,21 +1,21 @@
 <ion-header>
   <ion-navbar>
-    <ion-title style="color: white !important;">
-    Availability
+    <ion-title>
+    {{currentBanda.name}} Availability
     </ion-title>
-    <ion-buttons end>
-      <button ion-button icon-only (click)="addEvent()">
-      </button>
-    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <div>
+    <h1>{{currentBanda.name}}</h1>
+    <h1>{{currentBanda.price}}/hr</h1>
+  </div>
   <div class="calendar-header">
     <ion-row class="calendar-month">
-      <ion-col col-2 (click)="goToLastMonth()"><ion-icon name="arrow-back"></ion-icon></ion-col>
+      <ion-col col-2><ion-icon (click)="goToLastMonth()" name="arrow-back"></ion-icon></ion-col>
       <ion-col col-8>{{currentMonth}} {{currentYear}}</ion-col>
-      <ion-col col-2 (click)="goToNextMonth()"><ion-icon name="arrow-forward"></ion-icon></ion-col>
+      <ion-col col-2><ion-icon  name="arrow-forward"></ion-icon></ion-col>
     </ion-row>
   </div>
   <div class="calendar-body">
@@ -51,6 +51,6 @@
     </ion-list>
   </div>
    <div align="center">
-      <a id=callBut href="tel:+1-323-592-6955" >Contact Band</a>
+      <a id=callBut [attr.href]="currentBanda.phone" >Contact Band</a>
     </div>
 </ion-content>

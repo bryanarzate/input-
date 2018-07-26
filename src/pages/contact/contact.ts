@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController, NavParams } from 'ionic-angular';
 import { PricePage } from '../price/price';
 
 @Component({
@@ -21,65 +21,88 @@ export class ContactPage {
       startDate : new Date('2018-7-19  00:01:00'),
       endDate : new Date('2018-7-19  00:02:00'),
       title: 'July 19 Booked From',
-      location: 'Success',
       message : '1:00pm - 10:00pm'
     },
     {
       startDate : new Date('2018-7-28  00:01:00'),
       endDate : new Date('2018-7-28  00:02:00'),
       title: 'July 28 Booked From',
-      location: 'Success',
       message : '7:00pm-12:00am'
     },
     {
       startDate : new Date('2018-7-29  00:01:00'),
       endDate : new Date('2018-7-29  00:02:00'),
       title: 'July 29 Booked From',
-      location: 'Success',
       message : '5:00pm-9:00pm'
     },
     {
       startDate : new Date('2018-8-19  00:01:00'),
       endDate : new Date('2018-8-19  00:02:00'),
       title: 'August 19 Booked From',
-      location: 'Success1',
       message : '1:00pm - 5:00pm'
     },
     {
       startDate : new Date('2018-8-3  00:01:00'),
       endDate : new Date('2018-8-3  00:02:00'),
       title: 'August 3 Booked From',
-      location: 'Success',
       message : '8:00pm-1:00am'
     },
     {
       startDate : new Date('2018-8-4  00:01:00'),
       endDate : new Date('2018-8-4 00:02:00'),
       title: 'August 4 Booked From',
-      location: 'Success',
       message : '8:00pm- 12:00am'
     },
     {
       startDate : new Date('2018-9-8  00:01:00'),
       endDate : new Date('2018-9-8  00:02:00'),
       title: 'Septemeber Booked From',
-      location: 'Success',
       message : '1:00 - 10:00'
     },
   ];
   selectedEvent: any;
   isSelected: any;
-
-  constructor(private alertCtrl: AlertController,
-    public navCtrl: NavController,
-    ) {
+  public bandas = [
+    {
+      id: 'banda1',
+      name: 'Los Juniors de la Sierra',
+      price: 100,
+      phone: "tel:+19096880659"
+    },
+    {
+      id: 'banda2',
+      name: 'Amistades de Sinaloa',
+      price: 100,
+      phone: "tel:+15624156112"
+    },
+    {
+      id: 'banda3',
+      name: 'La Nueva Frequencia',
+      price: 100,
+      phone: "tel:+13238414826"
+    },
+    {
+      id: 'banda4',
+      name: 'Serafin y Su Nueva Orden',
+      price: 100,
+      phone: "tel:+13233886267"
     }
+  ]
+
+  currentBanda;
+  constructor(private alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams) {
+    this.currentBanda = this.bandas.filter((data) => {
+      if(data.id === this.navParams.get('id')){
+        return data
+      }
+    })
+    this.currentBanda = this.currentBanda[0];  
+  }
 
   ionViewWillEnter() {
     this.date = new Date();
     this.monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     this.getDaysOfMonth();
-    // this.loadEventThisMonth();
     console.log(this.eventList);
   }
 
@@ -120,23 +143,15 @@ export class ContactPage {
   }
 
   goToLastMonth() {
+    console.log('last month pressed')
     this.date = new Date(this.date.getFullYear(), this.date.getMonth(), 0);
     this.getDaysOfMonth();
   }
 
   goToNextMonth() {
+    console.log('next month pressed');
     this.date = new Date(this.date.getFullYear(), this.date.getMonth()+2, 0);
     this.getDaysOfMonth();
-  }
-
-  /*addEvent() {
-    this.navCtrl.push(AddEventPage);
-  }*/
-
-  loadEventThisMonth() {
-    //this.eventList = new Array();
-    var startDate = new Date(this.date.getFullYear(), this.date.getMonth(), 1);
-    var endDate = new Date(this.date.getFullYear(), this.date.getMonth()+1, 0);
   }
 
   checkEvent(day) {

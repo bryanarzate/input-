@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ClientRegisterPage } from '../client-register/client-register';
+import { HomePage } from '../home/home';
 import { AboutPage } from '../about/about';
 
 /**
@@ -20,7 +22,7 @@ export class MainPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-loginBut(){
+customerBut(){
     this.navCtrl.push(AboutPage);
   }
 

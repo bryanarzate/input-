@@ -26,13 +26,16 @@ h1{
 }
 
 #customerBut{
-    height: 46px;
+    height: 49.5px;
     width: 183px;
     font-size: 36px;
+    border: 3px solid white;
     background-color:#D92020;
     color:white;
     margin-top: 20px;
     border-radius:20px;
+    border-style: solid; 
+    border-color: white white white white;
 }
 #signBut{
     height: 35px;
