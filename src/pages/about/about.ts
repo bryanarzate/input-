@@ -18,7 +18,9 @@ var markers = [0, 1, 2, 3, 4,]
 
 export class AboutPage {
   public map;
+  checkFlag =[false,false,false,false];
   @ViewChild('map') mapRef: ElementRef;
+
 
   constructor(public navCtrl: NavController, public geolocation: Geolocation, ) { 
 
@@ -81,7 +83,7 @@ export class AboutPage {
         },
         {
           pos: new google.maps.LatLng(33.938429, -118.278330 ),
-          infoWindow: '<h1>Serafin y Su Nueva Orden</h1> <h5>(323)388-6267</h5> <button class="btn" id="banda4"> Show availability </button>',
+          infoWindow: '<h1>La Nueva Orden</h1> <h5>(323)388-6267</h5> <button class="btn" id="banda4"> Show availability </button>',
           id: 'banda4'
         }
       ]
@@ -97,10 +99,12 @@ export class AboutPage {
 
         marker.addListener('click', () =>{
           infoWindow.open(map, marker);
-          console.log(data.id);
-          document.getElementById(data.id).addEventListener('click', () => {
-            this.navCtrl.push(ContactPage, {id: data.id});
-          })
+          if(this.checkFlag[parseInt(data.id.substr(data.id.length -1))-1]==false){
+            document.getElementById(data.id).addEventListener('click', () => {
+              this.navCtrl.push(ContactPage, {id: data.id});
+            })
+            this.checkFlag[parseInt(data.id.substr(data.id.length -1))-1]=true;
+          }
         })
       })
     });

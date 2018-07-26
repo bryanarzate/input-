@@ -66,26 +66,30 @@ export class ContactPage {
     {
       id: 'banda1',
       name: 'Los Juniors de la Sierra',
-      price: 100,
-      phone: "tel:+19096880659"
+      price: 360,
+      phone: "tel:+17608924904",
+      phone1:"(760)892-4904"
     },
     {
       id: 'banda2',
       name: 'Amistades de Sinaloa',
-      price: 100,
-      phone: "tel:+15624156112"
+      price: 350,
+      phone: "tel:+15624156112",
+      phone1:"(562)415-6112"
     },
     {
       id: 'banda3',
       name: 'La Nueva Frequencia',
-      price: 100,
-      phone: "tel:+13238414826"
+      price: 280,
+      phone: "tel:+13238414826",
+      phone1:"(323)841-4826"
     },
     {
       id: 'banda4',
-      name: 'Serafin y Su Nueva Orden',
-      price: 100,
-      phone: "tel:+13233886267"
+      name: 'La Nueva Orden',
+      price: 450,
+      phone: "tel:+13233886267",
+      phone1:"(323)388-6267"
     }
   ]
 
@@ -96,14 +100,14 @@ export class ContactPage {
         return data
       }
     })
-    this.currentBanda = this.currentBanda[0];  
+    this.currentBanda = this.currentBanda[0];
   }
 
   ionViewWillEnter() {
     this.date = new Date();
     this.monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     this.getDaysOfMonth();
-    console.log(this.eventList);
+    console.log(this.eventList[0].title);
   }
 
   getDaysOfMonth() {
@@ -155,11 +159,13 @@ export class ContactPage {
   }
 
   checkEvent(day) {
+    console.log('check event');
     var hasEvent = false;
     var thisDate1 = new Date(this.date.getFullYear()+"-"+(this.date.getMonth()+1)+"-"+day+" 00:00:00");
     var thisDate2 = new Date(this.date.getFullYear()+"-"+(this.date.getMonth()+1)+"-"+day+" 23:59:59");
     this.eventList.forEach(event => {
       if(((event.startDate >= thisDate1) && (event.startDate <= thisDate2)) || ((event.endDate >= thisDate1) && (event.endDate <= thisDate2))) {
+        console.log('im here. there is suppose to be event here');
         hasEvent = true;
       }
     });
