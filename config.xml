@@ -93,4 +93,5 @@
     <allow-navigation href="http://169.254.42.78:8101" />
     <allow-navigation href="http://169.254.141.146:8101" />
     <allow-navigation href="http://10.27.30.153:8101" />
+    <allow-navigation href="http://192.168.0.22:8101" />
 </widget>

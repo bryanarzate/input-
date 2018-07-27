@@ -18,44 +18,58 @@ export class ContactPage {
   currentDate: any;
   eventList = [
     {
-      startDate : new Date('2018-7-19  00:01:00'),
-      endDate : new Date('2018-7-19  00:02:00'),
+      // startDate : new Date('2018-7-19 00:01:00'),
+      // endDate : new Date('2018-7-19 00:02:00'),
+      startDate : new Date('7/19/2018 00:01:00'),
+      endDate : new Date('7/19/2018 00:02:00'),
       title: 'July 19 Booked From',
       message : '1:00pm - 10:00pm'
     },
     {
-      startDate : new Date('2018-7-28  00:01:00'),
-      endDate : new Date('2018-7-28  00:02:00'),
+      // startDate : new Date('2018-7-28 00:01:00'),
+      // endDate : new Date('2018-7-28 00:02:00'),
+      startDate : new Date('7/28/2018 00:01:00'),
+      endDate : new Date('7/28/2018 00:02:00'),
       title: 'July 28 Booked From',
       message : '7:00pm-12:00am'
     },
     {
-      startDate : new Date('2018-7-29  00:01:00'),
-      endDate : new Date('2018-7-29  00:02:00'),
+      // startDate : new Date('2018-7-29 00:01:00'),
+      // endDate : new Date('2018-7-29 00:02:00'),
+      startDate : new Date('7/29/2018 00:01:00'),
+      endDate : new Date('7/29/2018 00:02:00'),
       title: 'July 29 Booked From',
       message : '5:00pm-9:00pm'
     },
     {
-      startDate : new Date('2018-8-19  00:01:00'),
-      endDate : new Date('2018-8-19  00:02:00'),
+      // startDate : new Date('2018-8-19 00:01:00'),
+      // endDate : new Date('2018-8-19 00:02:00'),
+      startDate : new Date('8/19/2018 00:01:00'),
+      endDate : new Date('8/19/2018 00:02:00'),
       title: 'August 19 Booked From',
       message : '1:00pm - 5:00pm'
     },
     {
-      startDate : new Date('2018-8-3  00:01:00'),
-      endDate : new Date('2018-8-3  00:02:00'),
+      // startDate : new Date('2018-8-3 00:01:00'),
+      // endDate : new Date('2018-8-3 00:02:00'),
+      startDate : new Date('8/3/2018 00:01:00'),
+      endDate : new Date('8/3/2018 00:02:00'),
       title: 'August 3 Booked From',
       message : '8:00pm-1:00am'
     },
     {
-      startDate : new Date('2018-8-4  00:01:00'),
-      endDate : new Date('2018-8-4 00:02:00'),
+      // startDate : new Date('2018-8-4 00:01:00'),
+      // endDate : new Date('2018-8-4 00:02:00'),
+      startDate : new Date('8/4/2018 00:01:00'),
+      endDate : new Date('8/4/2018 00:02:00'),
       title: 'August 4 Booked From',
       message : '8:00pm- 12:00am'
     },
     {
-      startDate : new Date('2018-9-8  00:01:00'),
-      endDate : new Date('2018-9-8  00:02:00'),
+      // startDate : new Date('2018-9-8 00:01:00'),
+      // endDate : new Date('2018-9-8 00:02:00'),
+      startDate : new Date('9/8/2018 00:01:00'),
+      endDate : new Date('9/8/2018 00:02:00'),
       title: 'Septemeber Booked From',
       message : '1:00 - 10:00'
     },
@@ -159,10 +173,11 @@ export class ContactPage {
   }
 
   checkEvent(day) {
-    console.log('check event');
     var hasEvent = false;
-    var thisDate1 = new Date(this.date.getFullYear()+"-"+(this.date.getMonth()+1)+"-"+day+" 00:00:00");
-    var thisDate2 = new Date(this.date.getFullYear()+"-"+(this.date.getMonth()+1)+"-"+day+" 23:59:59");
+    // var thisDate1 = new Date(this.date.getFullYear()+"-"+(this.date.getMonth()+1)+"-"+day+" 00:00:00");
+    // var thisDate2 = new Date(this.date.getFullYear()+"-"+(this.date.getMonth()+1)+"-"+day+" 23:59:59");
+    var thisDate1 = new Date((this.date.getMonth()+1)+"/"+day+"/"+this.date.getFullYear()+" 00:00:00");
+    var thisDate2 = new Date((this.date.getMonth()+1)+"/"+day+"/"+this.date.getFullYear()+" 23:59:59");
     this.eventList.forEach(event => {
       if(((event.startDate >= thisDate1) && (event.startDate <= thisDate2)) || ((event.endDate >= thisDate1) && (event.endDate <= thisDate2))) {
         console.log('im here. there is suppose to be event here');
@@ -176,8 +191,8 @@ export class ContactPage {
     console.log('pressed button' + day);
     this.isSelected = false;
     this.selectedEvent = new Array();
-    var thisDate1 = new Date(this.date.getFullYear()+"-"+(this.date.getMonth()+1)+"-"+day+" 00:00:00");
-    var thisDate2 = new Date(this.date.getFullYear()+"-"+(this.date.getMonth()+1)+"-"+day+" 23:59:59");
+    var thisDate1 = new Date((this.date.getMonth()+1)+"/"+day+"/"+this.date.getFullYear()+" 00:00:00");
+    var thisDate2 = new Date((this.date.getMonth()+1)+"/"+day+"/"+this.date.getFullYear()+" 23:59:59");
     this.eventList.forEach(event => {
       if(((event.startDate >= thisDate1) && (event.startDate <= thisDate2)) || ((event.endDate >= thisDate1) && (event.endDate <= thisDate2))) {
         this.isSelected = true;
