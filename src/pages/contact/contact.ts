@@ -1,6 +1,7 @@
 import { Component, NgZone } from '@angular/core';
 import { NavController, AlertController, NavParams } from 'ionic-angular';
 import { PricePage } from '../price/price';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @Component({
   selector: 'page-contact',
@@ -108,7 +109,7 @@ export class ContactPage {
   ]
 
   currentBanda;
-  constructor(private alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, public zone: NgZone) {
+  constructor(private alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, public zone: NgZone, public inAppBrowser: InAppBrowser) {
     this.currentBanda = this.bandas.filter((data) => {
       if(data.id === this.navParams.get('id')){
         return data
@@ -207,6 +208,10 @@ export class ContactPage {
         this.selectedEvent.push(event);
       }
     });
+  }
+
+  openFacebook(){
+    this.inAppBrowser.create('https://www.facebook.com/people/Bryan-Arzate/100006558072816');
   }
  
 }

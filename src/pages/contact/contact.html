@@ -1,18 +1,27 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-    {{currentBanda.name}} 
+      {{currentBanda.name}}
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
+  <img id="banner" src="assets/band-logo/laNueva.png">
+
+  <h1 class="margin">
+      Availability:
+    </h1>
   <div class="calendar-header">
     <ion-row class="calendar-month">
-      <ion-col col-2><ion-icon (click)="goToLastMonth()" name="arrow-back"></ion-icon></ion-col>
+      <ion-col col-2>
+        <ion-icon (click)="goToLastMonth()" name="arrow-back"></ion-icon>
+      </ion-col>
       <ion-col col-8>{{currentMonth}} {{currentYear}}</ion-col>
-      <ion-col col-2><ion-icon  name="arrow-forward" (click)="goToNextMonth()" ></ion-icon></ion-col>
+      <ion-col col-2>
+        <ion-icon name="arrow-forward" (click)="goToNextMonth()"></ion-icon>
+      </ion-col>
     </ion-row>
   </div>
   <div class="calendar-body">
@@ -31,7 +40,8 @@
         <ion-col col-1 *ngFor="let day of daysInThisMonth" (click)="selectDate(day)">
           <span class="currentDate" *ngIf="currentDate === day; else otherDate">{{day}}</span>
           <ng-template #otherDate class="otherDate">
-            {{day}}<br>
+            {{day}}
+            <br>
             <div class="event-bullet" *ngIf="checkEvent(day)"></div>
           </ng-template>
         </ion-col>
@@ -39,7 +49,9 @@
       </ion-row>
     </ion-grid>
   </div>
-  <div class="selected-event" *ngIf="isSelected">
+
+
+  <div class="selected-event margin" *ngIf="isSelected">
     <ion-list>
       <ion-item *ngFor="let se of selectedEvent">
         <h2>{{se.title}}</h2>
@@ -47,14 +59,60 @@
       </ion-item>
     </ion-list>
   </div>
-  
-  <div id=infoBox>
-   
-    <h1 align="center"><i class="fa fa-mobile" style="font-size:48px;color:black"></i>  {{currentBanda.phone1}} </h1>
-    <h1 align="center"><i class="fa fa-money" style="font-size:40px;color:black"></i>  ${{currentBanda.price}} per hour</h1>
-  </div>
-  
-  <div align="center">
-      <a id=callBut [attr.href]="currentBanda.phone" >Contact Band</a>
-    </div>
+
+
+
+  <iframe class="margin" align="center" id="vid1" src="https://www.youtube.com/embed/d7GgXlpDQ6U?autoplay=1">
+
+  </iframe>
+
+  <h1 class="margin">
+    Band Bio:
+  </h1>
+  <h4>
+    We are a very versatile and responsible band in the area of South Central Los Angeles.
+  </h4>
+
+
+  <ion-grid class="margin">
+    <ion-row>
+      <ion-col>
+        <span (click)="openFacebook()" class="icon-s">
+          <img src="assets/facebook.png" alt="">
+        </span>
+      </ion-col>
+      <ion-col>
+        <a href="https://www.instagram.com/lanuevafrecuencia/" target="_blank" class="icon-s">
+          <img src="assets/instagram.png" alt="">
+        </a>
+      </ion-col>
+      <ion-col>
+        <a href="https://www.youtube.com/channel/UCsE0UwSWtYeF1lTtZSTZ3NA" target="_blank" class="icon-s">
+          <img src="assets/youtube.png" alt="">
+        </a>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="row-height">
+        <ion-col>
+          <button class="icon-m">
+            <img src="assets/reserve.png" alt="">
+          </button>
+        </ion-col>
+        <ion-col>
+            <a href="tel:12133009188" class="icon-m">
+              <img src="assets/phone.png" alt="">
+            </a>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-toolbar>
+</ion-footer>

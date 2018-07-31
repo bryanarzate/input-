@@ -6,6 +6,10 @@ page-contact { [col-1] {
     width: 14.285714285714286%;
     max-width: 14.285714285714286%;
   }
+
+  .scroll-content{
+    padding-bottom: 50px !important;
+  }
   .col {
     text-align: center;
     padding: 5px;
@@ -141,19 +145,19 @@ page-contact { [col-1] {
   font-size: 32px;
   }
 
-  #callBut {
-    display: block;
-    width: 237px;
-    height: 70px;
-    background: #D92020;
-    padding: 15.5px;
-    text-align: center;
-    border-radius: 100px;
-    color: white;
-    font-size: 30px;
-    text-decoration: none;
-    margin-top: 65px;
-}
+  //#callBut {
+    //display: block;
+    //width: 237px;
+    //height: 70px;
+    //background: #D92020;
+    //padding: 15.5px;
+    //text-align: center;
+    //border-radius: 100px;
+    //color: white;
+    //font-size: 30px;
+    //text-decoration: none;
+    //margin-top: 65px;
+//}
 
 .back-button {
   color: white !important;
@@ -162,5 +166,59 @@ page-contact { [col-1] {
 #infoBox{
 margin-top: 55px
 }
+#vid1{
+  margin-top: 18px;
+}
+
+#banner{
+  width: 100%;
+}
+
+.margin{
+  margin-top: 35px !important;
+}
+
+#vid1{
+  width: 100%;
+  height: 250px;
+}
+
+.toolbar-background{
+  background-color: white;
 
 }
+
+.icon-s{
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.icon-s img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.icon-m{
+  display: block;
+  width: 63px;
+  height: 40px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 11px !important;
+}
+
+.icon-m img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.row-height{
+  height: 55px;
+  overflow: hidden;
+}
+}
+

@@ -87,13 +87,19 @@
     <plugin name="cordova-plugin-geolocation" spec="^4.0.1">
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
     </plugin>
-    <engine name="ios" spec="4.5.4" />
+    <allow-navigation href="*" />
     <allow-navigation href="http://169.254.245.123:8100" />
     <allow-navigation href="http://10.120.92.57:8100" />
     <allow-navigation href="http://169.254.42.78:8101" />
     <allow-navigation href="http://169.254.141.146:8101" />
     <allow-navigation href="http://10.27.30.153:8101" />
-    <allow-navigation href="http://192.168.0.22:8101" />
-    <allow-navigation href="http://10.27.22.168:8101" />
-    <allow-navigation href="http://169.254.38.156:8101" />
+    <allow-navigation href="http://169.254.141.146:8100" />
+    <allow-navigation href="http://10.27.30.153:8100" />
+    <allow-navigation href="http://169.254.21.93:8100" />
+    <allow-navigation href="http://10.27.26.150:8100" />
+    <allow-navigation href="http://169.254.2.231:8100" />
+    <engine name="ios" spec="4.5.4" />
+    <engine name="android" spec="7.0.0" />
+    <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
+    <allow-navigation href="http://169.254.68.25:8100" />
 </widget>
